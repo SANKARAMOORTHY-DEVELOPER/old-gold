@@ -1,0 +1,755 @@
+/* --------------------------------------------------------------------------------
+	CSS RESET
+ --------------------------------------------------------------------------------*/
+	
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, font, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td {
+		border: 0;
+		font-family: inherit;
+		font-size: 100%;
+		font-style: inherit;
+		font-weight: inherit;
+		line-height: 1.4;
+		margin: 0;
+		outline: 0;
+		padding: 0;
+		vertical-align: baseline;
+	}
+	
+	html {
+		font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+		overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
+		-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+		-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	}
+	
+	*,
+	*:before,
+	*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+		-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+		-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+		box-sizing:         border-box;
+	}
+	
+	body {
+		background: #fff; /* Fallback for when there is no custom background color defined. */
+	}
+	
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	main,
+	nav,
+	section {
+		display: block;
+	}
+	
+	ol,
+	ul {
+		list-style: none;
+	}
+	
+	table { /* tables still need 'cellspacing="0"' in the markup */
+		border-collapse: separate;
+		border-spacing: 0;
+	}
+	
+	caption,
+	th,
+	td {
+		font-weight: normal;
+		text-align: left;
+	}
+	blockquote:before,
+	blockquote:after,
+	q:before,
+	q:after {
+		content: "";
+	}
+	
+	blockquote,
+	q {
+		quotes: "" "";
+	}
+	
+	a:focus {
+		outline: thin dotted;
+	}
+	
+	a:hover,
+	a:active {
+		outline: 0;
+	}
+	
+	a img {
+		border: 0;
+	}
+	
+	.clear {
+		clear:both;
+	}
+	
+
+/* --------------------------------------------------------------------------------
+	GLOBAL STYLES
+ --------------------------------------------------------------------------------*/
+	
+	html {
+	  position: relative;
+	  min-height: 100%;
+	}
+	body {
+	  margin-bottom: 60px!important;
+	}	
+	
+	
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		color: #404040;
+		font-family: Arial,sans-serif;
+		font-size: 15px;
+		line-height: 1.5;
+	}
+
+	.form-control-custom {
+		width: 100%;
+		padding: 12px;
+		margin: 6px 0 4px;
+		border: 1px solid #ccc;
+		background: #fafafa;
+		font-size: 14px;
+		line-height: normal;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		-webkit-background-clip: padding-box;
+		-moz-background-clip: padding;
+		background-clip: padding-box;
+	}
+
+	.form-control-custom:focus {
+		background: #fff;
+		-webkit-transition: background .1s ease-in;
+		-moz-transition: background .1s ease-in;
+		-o-transition: background .1s ease-in;
+		transition: background .1s ease-in;
+		outline: none;
+	}
+	
+	.btn-default {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		padding: 1em 2.5em;
+		color: #fff;
+		background-color: #D6B360;
+		border-width: 0;
+		font-size: 12px;
+		line-height: 1em;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: uppercase;
+		letter-spacing: 0px;
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		font-size: 14px;
+		text-transform: none;		
+	}
+	
+	.btn-default:hover {
+		text-decoration: none;
+		color: white;
+	}
+	
+	.btn-default i {
+		margin-right: 5px;
+	}
+	
+	.btn-masher {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		padding: 0.7em 1.5em;
+		color: #fff;
+		border-width: 0;
+		line-height: 1em;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: uppercase;
+		letter-spacing: 0px;
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		font-size: 18px;
+		text-transform: none;
+		border: 1px solid white;
+		background-color: rgba(0, 0, 0, 0.32);
+		cursor: pointer;		
+	}
+	
+	.btn-masher:hover {
+		background-color:rgba(223, 45, 146, 0.32);
+	}
+	
+	.btn-cancel {
+		padding: 13px;
+		margin-left: 15px;
+	}
+	
+	.btn-back {
+		margin-left: 15px;
+		padding: 13px;
+		display: inline-block;
+		color: #428bca;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	
+	.form-functions {
+		margin-top: 25px;
+	}
+	
+	.alert {
+		margin-bottom: 20px;
+		color: white;
+		padding: 13px;
+		margin-top: 10px;
+	}
+	
+	.alert-info {
+		background-color: #9E9E9E;
+	}
+	
+	.alert-info a {
+		color: white;
+		text-decoration: underline;
+	}
+	
+	.alert-info a:hover {
+		color: white;
+	}
+	
+	.alert-danger {
+		background-color: #8B7F82;
+	}
+
+
+/* --------------------------------------------------------------------------------
+	NAVBAR
+ --------------------------------------------------------------------------------*/
+
+	#navbar {
+		width: 100%;
+		background-color: #CAA344;
+		border-bottom: 1px solid rgba(121, 108, 44, 0.67);
+		-webkit-box-shadow: 0 2px 2px -2px rgba(132, 125, 44, 0.52);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 500;
+	}
+	
+	.topper {
+		width: 95%;
+		margin: 0 auto;
+		position: relative;
+	}
+	
+	.top_logo {
+		font-family: 'Quattrocento Sans', sans-serif;
+		font-size: 21px;
+		float: left;
+		padding: 5px;
+		color: white;
+		text-decoration: none;
+		display: block;
+		line-height: 35px;
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	}
+	
+	.top_logo:hover {
+		text-decoration: none;
+		color: white;
+	}
+	
+	#locale {
+		font-style: italic;
+	}
+	
+	.user_controls {
+		float: right;
+	}
+	
+	.user_controls li {
+		float: left;
+	}
+	
+	.user_controls .active, .user_controls li:hover {
+		background-color: #D6B360;
+	}
+	
+	.user_controls li a {
+		line-height: 46px;
+		color:white;
+		text-decoration: none;
+		padding: 15px;
+	}
+	
+	.user_mobile {
+		float: none;
+		width: 100%;
+		display: none;
+		background-color: #CA568C;
+		position: absolute;
+		width: 100%;
+		border-top: 1px solid rgba(121, 44, 110, 0.67);
+		border-bottom: 1px solid rgba(121, 44, 110, 0.67);
+		-webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .52);			
+	}
+	
+	.user_mobile li {
+		text-align: center;
+	}
+	
+	.user_mobile li a {
+		line-height: 45px;
+		color:white;
+		text-decoration: none;
+		/*padding: 15px;*/
+		text-align: center;
+		display: block;
+	}
+	
+	.user_mobile li a:hover {
+		background-color: #E4639F;
+	}		
+	
+	#navButton {
+		font-size: 20px;
+		color: white;
+		float: right;
+		line-height: 45px;
+		padding-left: 15px;
+		padding-right: 15px;
+		cursor: pointer;
+		display: none;
+		right: 0;
+		position: absolute;
+		top: 1px;
+	}
+
+
+	#main-body {
+		padding-top: 90px;
+		padding-bottom: 40px;
+		width: 95%;
+	}
+	
+	#topad {
+		text-align: center;
+	}
+	
+
+	h1.page-header {
+		color: #D9B04C;
+		font-family: 'Quattrocento Sans', sans-serif;
+		font-size: 2.4em;
+	}
+
+	h2.sub-header {
+		color: #A98939;
+		font-size: 1.5em;
+		font-family: 'Quattrocento Sans', sans-serif;
+		margin-bottom: 10px;
+		font-weight: bold;
+		border: 0px;
+		width: 100%;
+		padding: 0px;
+	}
+	
+	h2{
+		  padding: 10px;
+		  background-color: #FFF;
+		  margin-bottom: -1px;
+		  border: 1px solid #B3B3B3;
+		}
+	  
+	  .family-righteous {
+		  font-family: 'Righteous', cursive;
+		  color: #3F3F3F;
+	  }
+	  
+	  form{
+		  border: 1px solid #CBCBCB;
+		  padding: 30px;
+		  padding-top: 5px;
+		  background-color: #F0F0F0;
+	  }
+
+	@media (max-width: 750px) {
+		
+		.user_controls {
+			display: none;
+		}
+		
+	}
+
+	
+/* --------------------------------------------------------------------------------
+	BODY
+ --------------------------------------------------------------------------------*/	
+ 
+ .step h2{
+		color: #f3df85;
+		text-align: center;
+		font-size: 23px;
+		font-weight: bold;
+		font-family: 'Oswald';
+		text-transform: uppercase;
+	}
+	
+	.step {
+		border-bottom: 1px solid #f3df85;
+		padding: 18px 0px;
+		text-align: center;
+		font-family: 'Oswald';
+		float: left;
+		width: 100%;
+	}
+	
+	.step p{
+		color: black;
+	}
+	
+	#theInstructions .title{
+		background: #F4DE85; 
+		font-family: 'Righteous', cursive; 
+		border-radius: 3px; 
+		text-align: center; 
+		font-size: 29px; 
+		padding: 7px 0px;
+		float: left;
+		width: 100%;
+	}
+	
+	#theInstructions p{
+		font-size: 15px;
+	}
+	
+	#theInstructions{
+		width: 35%; 
+		float: left; 
+		background: #CBA444;
+		padding: 5px; 
+		border-radius: 3px 0px 0px 3px;
+		margin-right: -5px;
+	}
+	
+	#theCalc {
+		border: 1px solid #DFDFDF;
+		border-radius: 0px 3px 3px 0px;
+		width: 55%; 
+		float: left;
+		margin-left: -28px;
+		padding-left: 33px;
+		padding-right: 14px;
+		}
+	
+	#theArrows{
+		float: left;
+		width: 33px;
+	}
+	
+	.triangle {
+		background: url('images/triangle.html');
+		width: 30px;
+		height: 90px;
+		background-repeat: no-repeat;
+		background-position-y: 50%;
+	}
+	
+	.dummyTriangle{
+		width: 30px;
+		height: 54px;
+	}
+	
+	#gad_long {
+	    overflow: hidden;
+	}
+ 
+ 
+ 	.special{
+	 	width: 100%;
+	 	font-size: 16px;
+ 	}
+ 	
+ 	.special i {
+	 	
+   		 color: #C3B35C;
+
+ 	}
+ 
+ 	.topcontent {
+		text-align: center;
+	}
+	
+	.gold_select {
+		height: 45px;
+		width: 100%;
+		margin-top: 20px;
+		border-radius: 1px;
+		font-size: 16px;
+	}
+	
+	.fieldlabel {
+		display: inline-block;
+		width: 100%;
+		color: #BA963F;
+		font-family: 'Quattrocento Sans', sans-serif;
+		font-size: 22px;
+	}
+	
+	#CalForm {
+		-webkit-appearance: none;
+		padding: 0.2em;
+		padding-left: 5px;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		height: 45px;
+		width: 50%;
+		font-size: 16px;
+		-webkit-border-radius: 0px;
+		margin-bottom: 6px;
+		margin-top: 10px;
+	}
+	
+	.priceHold {
+		display: inline-block;
+		margin-bottom: 6px;
+		margin-top: 10px;
+		font-size: 40px;
+		font-weight: bold;
+		height: 65px;
+	}
+	
+	.gramText {
+		font-weight: bold;
+		padding-left: 5px;
+	}
+	
+	#calculate {
+		padding: 15px;
+		background-color: #F3C353;
+		text-decoration: none;
+		color: white;
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+		box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		text-align: center;
+		display: block;
+		text-align: center;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	
+	#calculate:hover {
+		text-decoration: none;
+		background-color: #DEB149;
+		cursor: pointer;
+	}
+	
+	.calRow {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	
+	.resultRow {
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+	
+	#sideimg {
+	        text-align: center;
+    }
+	
+	#sideimg div {
+	        text-align: center;
+    font-size: 40px;
+    color: #caa344;
+    padding-bottom: 20px;
+	}
+	
+	#sideimg img {
+	    width:100%;
+	    margin-bottom:60px;
+	}
+	
+	.adoneholder {
+            text-align: center;
+	}
+	
+	.site_ad {
+		border: 1px solid rgb(237, 237, 237);
+		padding: 10px;
+		margin:0 auto;
+		display:block;
+	}
+	
+	/* Price Board CSS */
+	
+	.priceboard {
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		
+	}
+	.priceboard .header {
+		background: #CAA344;
+		color: #FFF;
+		font-family: 'Quattrocento Sans', sans-serif;
+		text-align: center;
+		font-size: 20px;
+		
+	}
+	
+	.priceboard td{
+		padding: 10px;
+		font-family: 'Quattrocento Sans', sans-serif;
+		
+	}
+	
+	.priceboard .goldTableTitle
+	{
+		text-align: center;
+	    background: #F7F7F7;
+	    font-weight: 900;
+	    border-right: 1px solid #FFF;
+	    border-bottom: 1px solid #FFF;
+	}
+	
+	.priceboard .goldTableInfo
+	{
+		text-align: center;
+		background: #F7F7F7;
+		   border-bottom: 1px solid #FFF;
+	}
+	
+	@media (max-width: 768px) {
+	
+		.gold_select {
+			width: 100%;
+		}
+		
+		.priceHold {
+			width: 100%;
+		}
+		
+		.fieldlabel {
+			width: 100%;
+		}
+		
+		#calculate {
+			width: 100%;
+		}
+		
+		#sideimg {
+		    display:none;
+		}
+		
+	}
+
+
+/* --------------------------------------------------------------------------------
+	VIDEO
+ --------------------------------------------------------------------------------*/
+
+.videoTitle {
+	background: #CAA344;
+    width: 100%;
+    font-family: 'Quattrocento Sans', sans-serif;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: -30px;
+    margin-top: 10px;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin-top: 30px;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+	
+	
+/* --------------------------------------------------------------------------------
+	FOOTER
+ --------------------------------------------------------------------------------*/
+	 
+	.footer {
+		background-color: #F2ECEF;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+	}
+	
+	.footer-con {
+		width: 95%;
+		margin: 0 auto;
+		position: relative;		
+	}
+	
+	.foot-text {
+		margin: 20px 0;
+		color: rgb(155, 155, 155);
+	}
+	
+	
+	@media (max-width: 750px) {
+	
+		.foot-text {
+			text-align: center;
+		}
+	
+	}
+	
